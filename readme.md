@@ -37,7 +37,30 @@ This project implements an end-to-end ETL pipeline for Reddit data. It begins by
 - Python 3.9 or higher
 
 ## Setup
-TBD
+### Clone + Environment Setup
+
+```bash
+git clone https://github.com/airscholar/RedditDataEngineering.git # Clone repository
+cd RedditDataEngineering                                           # Navigate to project
+
+python3 -m venv venv                                               # Create virtual environment
+source venv/bin/activate                                           # Activate virtual environment
+
+pip install -r requirements.txt                                    # Install dependencies
+```
+
+### Configuration + Docker Setup
+
+```bash
+mv config/config.conf.example config/config.conf           # Create config file from template
+
+# Add Reddit API credentials to config/config.conf
+
+docker-compose up -d                                       # Start all containers
+
+open http://localhost:8080                                 # Open Airflow UI
+```
+
 
 
 ## Future Enhancements
